@@ -375,9 +375,9 @@ public class FlightBooking {
  
  
  //task 7
- private String doi;
+ 
  Random random=new Random();
- public String [] ticketNumber=null;
+ public String [] ticketNumber;
  public void setTicketNumber(int index){
     String ticketNumber=null;
    switch(tripType){
@@ -399,55 +399,47 @@ public class FlightBooking {
      ticketNumber=ticketNumber+"E";
      break;
    }
-//    for(int i=0;i<4;i++){
-//      char f=(char)((random.nextInt(26)+65));
-//      ticketNumber=ticketNumber+f;
-//    }
-
-   for (int i = 0; i < 4; i++) {
+  for (int i = 0; i < 4; i++) {
     char f=(char)((random.nextInt(26)+65));
           ticketNumber=ticketNumber+f;
 }
-ticketNumber = ticketNumber + doi;
-
-this.ticketNumber[index] = ticketNumber;
-//    this.ticketNumber = ticketNumber + "DOM";
-//    if (tripSource == TripSource.NANJING && tripDestination == TripDestination.BEIJING) {
-//        this.ticketNumber = ticketNumber + "DOM";
-//    }
-//    if (tripSource == TripSource.BEIJING && tripDestination == TripDestination.NANJING) {
-//        this.ticketNumber = ticketNumber + "DOM";
-//    }
-//    if (tripSource == TripSource.OULU && tripDestination == TripDestination.HELSINKI) {
-//        this.ticketNumber = ticketNumber + "DOM";
-//    }
-//    if (tripSource == TripSource.HELSINKI && tripDestination == TripDestination.OULU) {
-//        this.ticketNumber = ticketNumber + "DOM";
-//    }
-//    if (tripSource == TripSource.NANJING && tripDestination == TripDestination.OULU) {
-//        this.ticketNumber = ticketNumber + "INT";
-//    }
-//    if (tripSource == TripSource.OULU && tripDestination == TripDestination.NANJING) {
-//        this.ticketNumber = ticketNumber + "INT";
-//    }
-//    if (tripSource == TripSource.NANJING && tripDestination == TripDestination.HELSINKI) {
-//        this.ticketNumber = ticketNumber + "INT";
-//    }
-//    if (tripSource == TripSource.HELSINKI && tripDestination == TripDestination.NANJING) {
-//        this.ticketNumber = ticketNumber + "INT";
-//    }
-//    if (tripSource == TripSource.BEIJING && tripDestination == TripDestination.OULU) {
-//        this.ticketNumber = ticketNumber + "INT";
-//    }
-//    if (tripSource == TripSource.OULU && tripDestination == TripDestination.BEIJING) {
-//        this.ticketNumber = ticketNumber + "INT";
-//    }
-//    if (tripSource == TripSource.BEIJING && tripDestination == TripDestination.NANJING) {
-//        this.ticketNumber = ticketNumber + "INT";
-//    }
-//    if (tripSource == TripSource.HELSINKI && tripDestination == TripDestination.BEIJING) {
-//        this.ticketNumber = ticketNumber + "INT";
-//    }
+    this.ticketNumber = new String[]{ticketNumber+"DOM"};
+    if (tripSource == TripSource.NANJING && tripDestination == TripDestination.BEIJING) {
+        this.ticketNumber = new String[]{ticketNumber + "DOM"};
+    }
+    if (tripSource == TripSource.BEIJING && tripDestination == TripDestination.NANJING) {
+        this.ticketNumber = new String[]{ticketNumber + "DOM"};
+    }
+    if (tripSource == TripSource.OULU && tripDestination == TripDestination.HELSINKI) {
+        this.ticketNumber = new String[]{ticketNumber + "DOM"};
+    }
+    if (tripSource == TripSource.HELSINKI && tripDestination == TripDestination.OULU) {
+        this.ticketNumber = new String[]{ticketNumber + "DOM"};
+    }
+    if (tripSource == TripSource.NANJING && tripDestination == TripDestination.OULU) {
+        this.ticketNumber = new String[]{ticketNumber + "INT"};
+    }
+    if (tripSource == TripSource.OULU && tripDestination == TripDestination.NANJING) {
+        this.ticketNumber = new String[]{ticketNumber + "INT"};
+    }
+    if (tripSource == TripSource.NANJING && tripDestination == TripDestination.HELSINKI) {
+        this.ticketNumber = new String[]{ticketNumber + "INT"};
+    }
+    if (tripSource == TripSource.HELSINKI && tripDestination == TripDestination.NANJING) {
+        this.ticketNumber = new String[]{ticketNumber + "INT"};
+    }
+    if (tripSource == TripSource.BEIJING && tripDestination == TripDestination.OULU) {
+        this.ticketNumber = new String[]{ticketNumber + "INT"};
+    }
+    if (tripSource == TripSource.OULU && tripDestination == TripDestination.BEIJING) {
+        this.ticketNumber = new String[]{ticketNumber + "INT"};
+    }
+    if (tripSource == TripSource.BEIJING && tripDestination == TripDestination.NANJING) {
+        this.ticketNumber = new String[]{ticketNumber + "INT"};
+    }
+    if (tripSource == TripSource.HELSINKI && tripDestination == TripDestination.BEIJING) {
+        this.ticketNumber = new String[]{ticketNumber + "INT"};
+    }
  
  }
  public String getTicketNumber(int index){
@@ -463,7 +455,7 @@ this.ticketNumber[index] = ticketNumber;
  //task 8
  private double totalTicketPrice;
  public void setTotalTicketPrice(){
-   this.totalTicketPrice = Math.abs((((2 * ((300 + (0.1 * 300)) + (0.05 * 300))) + (5 * ((300 + (0.1 * 300)) + (0.05 * 300)))) + 250) * 2);
+   this.totalTicketPrice = 2* ((0*(300 + (0.15*300) + (0.1*300) + 250)) + (3*(300 + (0.15*300) + (0.1*300) + 250)));
    //this.totalTicketPrice=Math.abs((((child *((300 + (0.1*300)) + (0.05*300))) + (adults*((300 + (0.1*300)) + (0.05*300)))) + 250)*2);
  }
  public double getTotalTicketPrice(){
@@ -527,9 +519,9 @@ this.ticketNumber[index] = ticketNumber;
 
 
 
-private String [] passengerFullName;
+private String [] passengerFullName={"Matt Jive", "Sally Fields", "Posh Quattro"};
 public void setPassengerFullName(int index ,String passengerFullName){
-    this.passengerFullName[index]=passengerFullName;
+    this.passengerFullName=new String[]{"Matt Jive", "Sally Fields", "Posh Quattro"};
 }
 public String getPassengerFullName(int index){
     return passengerFullName[index];
@@ -537,24 +529,24 @@ public String getPassengerFullName(int index){
 
 
 
-private String [] passengerGender;
+private String [] passengerGender={"Male", "Female", "Other"};
 public void setPassengerGender(int index,String passengerGender){
-    this.passengerGender[index]=passengerGender;
+    this.passengerGender=new String[]{"Male", "Female", "Other"};
 }
 public String getPassengerGender(int index){
     return passengerGender[index];
 }
 
 
-private int [] passengerAge;
+private int [] passengerAge={43, 32, 21};
 public void setPassengerAge(int index, int passengerAge){
-    this.passengerAge[index]=passengerAge;
+    this.passengerAge=new int[]{43, 32, 21};
 }
 public int getPassengerAge(int index){
     return passengerAge[index];
 }
 
-private int number;
+ int number;
 public FlightBooking(String passengerFullName,LocalDate depart,LocalDate returnDate,int childPassengers, int adultPassengers){
     this.passengerFullName = new String[1];
     this.passengerFullName[0] = passengerFullName;
@@ -569,7 +561,7 @@ public FlightBooking(int number){
     this.passengerFullName = new String[number];
     this.passengerGender = new String[number];
     this.passengerAge = new int[number];
-    //this.ticketNumber = new String[number];
+    this.ticketNumber = new String[number];
     this.number = number;
 
 
@@ -630,6 +622,24 @@ public void setDestinationAirport(String sourceAirport ,String destinationAirpor
 
 public Airport getDestinationAirport(){
     return destinationAirport;
+}
+
+
+
+Scanner scanner=new Scanner(System.in);
+int totalTickets;
+public void reserveTickerts(){
+for(int j=0;j<totalTickets;j++){
+  System.out.println("Please enter your details:"+(j+1));
+  System.out.println("Your full name: ");
+  setPassengerFullName(j, scanner.nextLine());
+  System.out.println("Your gender: ");
+  setPassengerGender(j, scanner.nextLine());
+  System.out.println("Your age: ");
+  setPassengerAge(j, scanner.nextInt());
+}
+
+
 }
 
 }
